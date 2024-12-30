@@ -9,10 +9,15 @@ const initialState: ActionResponse = {
   message: "",
 };
 
-export default function CreateUserForm() {
+export default function UpdateUserForm() {
   const router = useRouter();
   const [state, action, isPending] = useActionState(createUser, {
     ...initialState,
+    inputs: {
+      firstName: "John",
+      lastName: "Doe",
+      emailAddress: "fake@me.com",
+    },
   });
 
   useEffect(() => {

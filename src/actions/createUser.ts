@@ -1,16 +1,8 @@
 "use server";
 
-import { z } from "zod";
+import { UserSchema } from "@/schemas/User";
 
-const UserSchema = z.object({
-  firstName: z.string().min(3),
-  lastName: z.string().min(3),
-  emailAddress: z.string().email({
-    message: "Please enter a valid email address",
-  }),
-});
-
-export async function submitUser(
+export default async function createUser(
   prevState: ActionResponse | null,
   formData: FormData
 ): Promise<ActionResponse> {

@@ -1,10 +1,17 @@
 import React from "react";
-import CreateUserForm from "@/components/CreateUserForm";
+import NextLink from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="container">
-      <CreateUserForm />
-    </div>
+    <main className="container">
+      <ul>
+        <li>
+          <NextLink href="/create">Create User</NextLink>
+        </li>
+        <li>
+          <NextLink href="/update">Update User</NextLink>
+        </li>
+      </ul>
+    </main>
   );
 }
